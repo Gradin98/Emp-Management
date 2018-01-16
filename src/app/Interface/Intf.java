@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 public class Intf {
 
-	protected JFrame frame;
+	final protected JFrame frame;
 	
 	public Intf(JFrame frame) {
 		this.frame = frame;

@@ -19,7 +19,7 @@ public class ManageButtonEvent extends HomeInt implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		Intf intf = new ManageIntf(frame);
+		final Intf intf = new ManageIntf(frame);
 		intf.setInterface();
 		
 	}

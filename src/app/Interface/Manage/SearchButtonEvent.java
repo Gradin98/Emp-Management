@@ -13,14 +13,14 @@ import app.databases.SQLiteConnection;
 
 public class SearchButtonEvent extends ManageIntf implements ActionListener {
 
-	private JTextField nameArea;
-	private JTextField searchArea;
-	private JTextField firstNameArea;
-	private JTextField salarArea;
-	private JTextField postArea;
-	private JTextField teamArea;
-	private JTextField projectArea;
-	private JTextField dateArea;
+	final private JTextField nameArea;
+	final private JTextField searchArea;
+	final private JTextField firstNameArea;
+	final private JTextField salarArea;
+	final private JTextField postArea;
+	final private JTextField teamArea;
+	final private JTextField projectArea;
+	final private JTextField dateArea;
 
 	public SearchButtonEvent(JFrame frame, JTextField nameArea, JTextField searchArea, JTextField firstNameArea,
 			JTextField salarArea, JTextField postArea, JTextField teamArea, JTextField projectArea,

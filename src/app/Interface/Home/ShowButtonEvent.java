@@ -12,7 +12,7 @@ import app.databases.SQLiteConnection;
 
 public class ShowButtonEvent extends HomeInt implements ActionListener {
 
-	private Object[] columns;
+	final private Object[] columns;
 
 	public ShowButtonEvent(JFrame frame, Object[] columns) {
 		super(frame);
@@ -21,10 +21,11 @@ public class ShowButtonEvent extends HomeInt implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SQLiteConnection con = new SQLiteConnection();
-		Object[][] obj = con.getContentDb();
-		JTable table = new JTable(obj, columns);
-		JScrollPane pane = new JScrollPane(table);
+		final SQLiteConnection con = new SQLiteConnection();
+		final Object[][] obj = con.getContentDb();
+		final JTable table = new JTable(obj, columns);
+		final JScrollPane pane = new JScrollPane(table);
+		
 		pane.setBounds(20, 150, 700, 200);
 		frame.getContentPane().add(pane);
 		

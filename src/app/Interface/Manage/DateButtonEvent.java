@@ -11,7 +11,7 @@ import app.Interface.components.DataPicker;
 
 public class DateButtonEvent extends ManageIntf implements ActionListener {
 
-	private JTextField dateArea;
+	final private JTextField dateArea;
 
 	public DateButtonEvent(JFrame frame, JTextField dateArea) {
 		super(frame);

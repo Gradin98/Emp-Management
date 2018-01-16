@@ -12,14 +12,14 @@ import app.databases.SQLiteConnection;
 
 public class SubmitButtonEvent extends ManageIntf implements ActionListener {
 
-	private JTextField nameArea;
-	private JTextField searchArea;
-	private JTextField firstNameArea;
-	private JTextField salarArea;
-	private JTextField postArea;
-	private JTextField teamArea;
-	private JTextField projectArea;
-	private JTextField dateArea;
+	final private JTextField nameArea;
+	final private JTextField searchArea;
+	final private JTextField firstNameArea;
+	final private JTextField salarArea;
+	final private JTextField postArea;
+	final private JTextField teamArea;
+	final private JTextField projectArea;
+	final private JTextField dateArea;
 	
 	public SubmitButtonEvent(JFrame frame, JTextField nameArea, JTextField searchArea, JTextField firstNameArea,
 			JTextField salarArea, JTextField postArea, JTextField teamArea, JTextField projectArea,
@@ -37,14 +37,15 @@ public class SubmitButtonEvent extends ManageIntf implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SQLiteConnection con = new SQLiteConnection();
+		final SQLiteConnection con = new SQLiteConnection();
 		con.updateContent(searchArea.getText(),nameArea.getText(), firstNameArea.getText(), salarArea.getText(),
 				postArea.getText(), teamArea.getText(), projectArea.getText(), dateArea.getText());
 		
-		Intf intf = new ManageIntf(frame);
+		final Intf intf = new ManageIntf(frame);
 		intf.setInterface();
 		
 	}
+	
 	
 	
 

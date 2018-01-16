@@ -68,12 +68,15 @@ public class SQLiteConnection {
 			String project, String birthdate) {
 		connect();
 		try {
-			String sql = "UPDATE Emp SET name = '" + name + "', firstname = '" + firstname + "', salary = " + salary
-					+ ", post = '" + post + "', team = '" + team + "', project = '" + project + "', birthdate = '"
-					+ birthdate + "' WHERE id LIKE " + id;
+			if (checkData(id) && checkData(name) && checkData(firstname) && checkData(salary) && checkData(post)
+					&& checkData(team) && checkData(project) && checkData(birthdate)) {
+				String sql = "UPDATE Emp SET name = '" + name + "', firstname = '" + firstname + "', salary = " + salary
+						+ ", post = '" + post + "', team = '" + team + "', project = '" + project + "', birthdate = '"
+						+ birthdate + "' WHERE id LIKE " + id;
 
-			stmt.executeUpdate(sql);
-			stmt.close();
+				stmt.executeUpdate(sql);
+				stmt.close();
+			}
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -86,12 +89,16 @@ public class SQLiteConnection {
 			String birthdate) {
 		connect();
 		try {
-			String sql = "INSERT INTO Emp (name,firstname,salary,post,team,project,birthdate)" + " VALUES('" + name
-					+ "','" + firstname + "','" + salary + "','" + post + "','" + team + "','" + project + "','"
-					+ birthdate + "')";
 
-			stmt.executeUpdate(sql);
-			stmt.close();
+			if (checkData(name) && checkData(firstname) && checkData(salary) && checkData(post) && checkData(team)
+					&& checkData(project) && checkData(birthdate)) {
+				String sql = "INSERT INTO Emp (name,firstname,salary,post,team,project,birthdate)" + " VALUES('" + name
+						+ "','" + firstname + "','" + salary + "','" + post + "','" + team + "','" + project + "','"
+						+ birthdate + "')";
+
+				stmt.executeUpdate(sql);
+				stmt.close();
+			}
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -104,6 +111,9 @@ public class SQLiteConnection {
 
 		connect();
 		try {
+
+			if (!checkData(id))
+				return;
 
 			String sql = "DELETE FROM Emp WHERE id LIKE " + id;
 
@@ -121,6 +131,9 @@ public class SQLiteConnection {
 		connect();
 
 		try {
+			if (!checkData(id))
+				return null;
+
 			ResultSet result = stmt.executeQuery("SELECT * FROM Emp WHERE id LIKE " + id);
 
 			while (result.next()) {
@@ -185,6 +198,13 @@ public class SQLiteConnection {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	private boolean checkData(String text) {
+		if (!text.equals("")) {
+			return true;
+		}
+		return false;
 	}
 
 }

@@ -11,11 +11,11 @@ public class Main {
 	public static void main(String args[]) {
 		
 
-		JFrame frame = new JFrame();
-		SQLiteConnection con = new SQLiteConnection();
+		final JFrame frame = new JFrame();
+		final SQLiteConnection con = new SQLiteConnection();
 		con.createDatabase();
 		
-		Intf intf = new HomeInt(frame);
+		final Intf intf = new HomeInt(frame);
 		intf.setInterface();
 	}
 }

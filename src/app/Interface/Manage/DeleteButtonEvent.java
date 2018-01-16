@@ -12,7 +12,7 @@ import app.databases.SQLiteConnection;
 
 public class DeleteButtonEvent extends ManageIntf implements ActionListener {
 
-	private JTextField searchArea;
+	final private JTextField searchArea;
 	
 	public DeleteButtonEvent(JFrame frame, JTextField searchArea) {
 		super(frame);
@@ -23,10 +23,10 @@ public class DeleteButtonEvent extends ManageIntf implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SQLiteConnection con = new SQLiteConnection();
+		final SQLiteConnection con = new SQLiteConnection();
 		con.deleteEmp(searchArea.getText());
 
-		Intf intf = new ManageIntf(frame);
+		final Intf intf = new ManageIntf(frame);
 		intf.setInterface();
 		
 	}

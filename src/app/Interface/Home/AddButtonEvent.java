@@ -17,7 +17,7 @@ public class AddButtonEvent extends HomeInt implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		Intf intf = new AddInt(frame);
+		final Intf intf = new AddInt(frame);
 		intf.setInterface();
 		
 	}

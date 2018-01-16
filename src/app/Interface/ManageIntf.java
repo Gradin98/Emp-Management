@@ -14,29 +14,29 @@ import app.Interface.components.ComponentConstructor;
 
 public class ManageIntf extends Intf {
 
-	protected JLabel name = ComponentConstructor.makeLabel("Name:", 50, 50);
-	protected JTextField nameArea = ComponentConstructor.makeTextArea(50, 80);
-	protected JLabel firstName = ComponentConstructor.makeLabel("First Name:", 50, 120);
-	protected JTextField firstNameArea = ComponentConstructor.makeTextArea(50, 150);
-	protected JLabel salar = ComponentConstructor.makeLabel("Salary:", 50, 190);
-	protected JTextField salarArea = ComponentConstructor.makeTextArea(50, 220);
-	protected JLabel post = ComponentConstructor.makeLabel("Post:", 250, 50);
-	protected JTextField postArea = ComponentConstructor.makeTextArea(250, 80);
-	protected JLabel team = ComponentConstructor.makeLabel("Team:", 250, 120);
-	protected JTextField teamArea = ComponentConstructor.makeTextArea(250, 150);
-	protected JLabel project = ComponentConstructor.makeLabel("Project:", 250, 190);
-	protected JTextField projectArea = ComponentConstructor.makeTextArea(250, 220);
-	protected JFrame f = new JFrame();
-	protected JLabel date = ComponentConstructor.makeLabel("Birthdate:", 450, 50);
-	protected JTextField dateArea = ComponentConstructor.makeTextArea(450, 80);
-	protected JButton dateButton = ComponentConstructor.makeSmallButton("Picker", 600, 80);
-	protected JButton submit = ComponentConstructor.makeButton("Update", 550, 300);
-	protected JButton delete = ComponentConstructor.makeButton("Delete", 350, 300);
-	protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\back.png", 680,
-			-20);
-	protected JLabel search = ComponentConstructor.makeLabel("Search:", 50, -20);
-	protected JTextField searchArea = ComponentConstructor.makeTextArea(50, 10);
-	protected JButton searchButton = ComponentConstructor.makeSmallButton("Search", 200, 10);
+	final protected JLabel name = ComponentConstructor.makeLabel("Name:", 50, 50);
+	final protected JTextField nameArea = ComponentConstructor.makeTextArea(50, 80);
+	final protected JLabel firstName = ComponentConstructor.makeLabel("First Name:", 50, 120);
+	final protected JTextField firstNameArea = ComponentConstructor.makeTextArea(50, 150);
+	final protected JLabel salar = ComponentConstructor.makeLabel("Salary:", 50, 190);
+	final protected JTextField salarArea = ComponentConstructor.makeTextArea(50, 220);
+	final protected JLabel post = ComponentConstructor.makeLabel("Post:", 250, 50);
+	final protected JTextField postArea = ComponentConstructor.makeTextArea(250, 80);
+	final protected JLabel team = ComponentConstructor.makeLabel("Team:", 250, 120);
+	final protected JTextField teamArea = ComponentConstructor.makeTextArea(250, 150);
+	final protected JLabel project = ComponentConstructor.makeLabel("Project:", 250, 190);
+	final protected JTextField projectArea = ComponentConstructor.makeTextArea(250, 220);
+	final protected JFrame f = new JFrame();
+	final protected JLabel date = ComponentConstructor.makeLabel("Birthdate:", 450, 50);
+	final protected JTextField dateArea = ComponentConstructor.makeTextArea(450, 80);
+	final protected JButton dateButton = ComponentConstructor.makeSmallButton("Picker", 600, 80);
+	final protected JButton submit = ComponentConstructor.makeButton("Update", 550, 300);
+	final protected JButton delete = ComponentConstructor.makeButton("Delete", 350, 300);
+	final protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\back.png",
+			680, -20);
+	final protected JLabel search = ComponentConstructor.makeLabel("Search:", 50, -20);
+	final protected JTextField searchArea = ComponentConstructor.makeTextArea(50, 10);
+	final protected JButton searchButton = ComponentConstructor.makeSmallButton("Search", 200, 10);
 
 	public ManageIntf(JFrame frame) {
 		super(frame);
