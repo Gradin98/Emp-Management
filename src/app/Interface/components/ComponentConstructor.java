@@ -3,9 +3,7 @@ package app.Interface.components;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class ComponentConstructor {
 
@@ -39,21 +37,10 @@ public class ComponentConstructor {
 		return label;
 	}
 	
-	public static JTextArea makeTextArea(int x, int y) {
-		JTextArea area =new JTextArea();
+	public static JTextField makeTextArea(int x, int y) {
+		JTextField area =new JTextField();
 		area.setBounds(x,y,150,20);
 		return area;
-	}
-	
-	public static JScrollPane makeTable(int x, int y) {
-		
-		Object[] columns = { "id", "nume", "prenume", "post", "salar" };
-		Object[][] data = {};
-		
-		JTable table = new JTable(data, columns);
-		JScrollPane pane = new JScrollPane(table);
-		pane.setBounds(x,y,700,200);
-		return pane;
 	}
 	
 	

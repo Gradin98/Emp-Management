@@ -1,19 +1,44 @@
 package app.Interface;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import app.Interface.Add.BackButtonEvent;
 import app.Interface.Add.SubmitButtonEvent;
+import app.Interface.Manage.DateButtonEvent;
 import app.Interface.components.ComponentConstructor;
-import app.Interface.components.DataPicker;
 
 public class AddInt extends Intf {
+
+	protected JLabel name = ComponentConstructor.makeLabel("Name:", 50, 50);
+	protected JTextField nameArea = ComponentConstructor.makeTextArea(50, 80);
+
+	protected JLabel firstName = ComponentConstructor.makeLabel("First Name:", 50, 120);
+	protected JTextField firstNameArea = ComponentConstructor.makeTextArea(50, 150);
+
+	protected JLabel salar = ComponentConstructor.makeLabel("Salary:", 50, 190);
+	protected JTextField salarArea = ComponentConstructor.makeTextArea(50, 220);
+
+	protected JLabel post = ComponentConstructor.makeLabel("Post:", 250, 50);
+	protected JTextField postArea = ComponentConstructor.makeTextArea(250, 80);
+
+	protected JLabel team = ComponentConstructor.makeLabel("Team:", 250, 120);
+	protected JTextField teamArea = ComponentConstructor.makeTextArea(250, 150);
+
+	protected JLabel project = ComponentConstructor.makeLabel("Project:", 250, 190);
+	protected JTextField projectArea = ComponentConstructor.makeTextArea(250, 220);
+
+	protected JFrame f = new JFrame();
+	protected JLabel date = ComponentConstructor.makeLabel("Birthdate:", 450, 50);
+	protected JTextField dateArea = ComponentConstructor.makeTextArea(450, 80);
+	protected JButton dateButton = ComponentConstructor.makeSmallButton("Picker", 600, 80);
+
+	protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\back.png", 680,
+			-20);
+
+	protected JButton submit = ComponentConstructor.makeButton("Submit", 550, 300);
 
 	public AddInt(JFrame frame) {
 		super(frame);
@@ -24,39 +49,12 @@ public class AddInt extends Intf {
 
 		clearFrame();
 
-		JLabel name = ComponentConstructor.makeLabel("Name:", 50, 50);
-		JTextArea nameArea = ComponentConstructor.makeTextArea(50, 80);
+		dateButton.addActionListener(new DateButtonEvent(f, dateArea));
 
-		JLabel firstName = ComponentConstructor.makeLabel("First Name:", 50, 120);
-		JTextArea firstNameArea = ComponentConstructor.makeTextArea(50, 150);
-
-		JLabel salar = ComponentConstructor.makeLabel("Salary:", 50, 190);
-		JTextArea salarArea = ComponentConstructor.makeTextArea(50, 220);
-
-		JLabel post = ComponentConstructor.makeLabel("Post:", 250, 50);
-		JTextArea postArea = ComponentConstructor.makeTextArea(250, 80);
-
-		JLabel team = ComponentConstructor.makeLabel("Team:", 250, 120);
-		JTextArea teamArea = ComponentConstructor.makeTextArea(250, 150);
-
-		JLabel project = ComponentConstructor.makeLabel("Project:", 250, 190);
-		JTextArea projectArea = ComponentConstructor.makeTextArea(250, 220);
-
-		JFrame f = new JFrame();
-		JLabel date = ComponentConstructor.makeLabel("Birthdate:", 450, 50);
-		JTextArea dateArea = ComponentConstructor.makeTextArea(450, 80);
-		JButton dateButton = ComponentConstructor.makeSmallButton("Picker", 600, 80);
-		dateButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-				dateArea.setText(new DataPicker(f).setPickedDate());
-			}
-		});
-
-		JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\back.png", 680, -20);
 		back.addMouseListener(new BackButtonEvent(frame));
-		
-		JButton submit = ComponentConstructor.makeButton("Submit", 550, 300);
-		submit.addActionListener(new SubmitButtonEvent(frame));
+
+		submit.addActionListener(new SubmitButtonEvent(frame, nameArea, firstNameArea, salarArea, postArea, teamArea,
+				projectArea, dateArea));
 
 		frame.getContentPane().add(name);
 		frame.getContentPane().add(nameArea);

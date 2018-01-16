@@ -23,6 +23,7 @@ public class Intf {
 	public void clearFrame() {
 		frame.getContentPane().removeAll();
 		frame.repaint();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 }

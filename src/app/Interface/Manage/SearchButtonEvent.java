@@ -1,16 +1,17 @@
 package app.Interface.Manage;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-import app.Interface.Intf;
+import app.Emp;
 import app.Interface.ManageIntf;
 import app.databases.SQLiteConnection;
 
-public class SubmitButtonEvent extends ManageIntf implements ActionListener {
+public class SearchButtonEvent extends ManageIntf implements ActionListener {
 
 	private JTextField nameArea;
 	private JTextField searchArea;
@@ -20,8 +21,8 @@ public class SubmitButtonEvent extends ManageIntf implements ActionListener {
 	private JTextField teamArea;
 	private JTextField projectArea;
 	private JTextField dateArea;
-	
-	public SubmitButtonEvent(JFrame frame, JTextField nameArea, JTextField searchArea, JTextField firstNameArea,
+
+	public SearchButtonEvent(JFrame frame, JTextField nameArea, JTextField searchArea, JTextField firstNameArea,
 			JTextField salarArea, JTextField postArea, JTextField teamArea, JTextField projectArea,
 			JTextField dateArea) {
 		super(frame);
@@ -38,15 +39,29 @@ public class SubmitButtonEvent extends ManageIntf implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		SQLiteConnection con = new SQLiteConnection();
-		con.updateContent(searchArea.getText(),nameArea.getText(), firstNameArea.getText(), salarArea.getText(),
-				postArea.getText(), teamArea.getText(), projectArea.getText(), dateArea.getText());
-		
-		Intf intf = new ManageIntf(frame);
-		intf.setInterface();
+
+		if (searchArea.getText() != "") {
+			Emp emp = con.getEmpByID(searchArea.getText());
+
+			if (emp != null) {
+				Component[] cmp = frame.getContentPane().getComponents();
+				for (Component c : cmp) {
+					c.setVisible(true);
+				}
+
+				nameArea.setText(emp.getName());
+				firstNameArea.setText(emp.getFirstname());
+				salarArea.setText(emp.getSalary());
+				postArea.setText(emp.getPost());
+				teamArea.setText(emp.getTeam());
+				projectArea.setText(emp.getProject());
+				dateArea.setText(emp.getBirthdate());
+			} else {
+
+			}
+
+		}
 		
 	}
-	
-	
 
-	
 }
