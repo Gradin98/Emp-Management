@@ -6,8 +6,18 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import app.Logs;
 import app.Interface.ManageIntf;
 import app.Interface.components.DataPicker;
+
+/**
+ * 
+ * Clasa care seteaza Listeneru pentru datePicker
+ * Mostene clasa ManageIntf
+ * 
+ * @author Kocsis Lorand
+ *
+ */
 
 public class DateButtonEvent extends ManageIntf implements ActionListener {
 
@@ -22,6 +32,8 @@ public class DateButtonEvent extends ManageIntf implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		Logs.setLog("Open datePicker");
+
 		dateArea.setText(new DataPicker(f).setPickedDate());
 		
 	}

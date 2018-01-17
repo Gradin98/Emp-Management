@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import app.Logs;
 import app.Interface.AddInt;
 import app.Interface.components.DataPicker;
 
@@ -20,6 +21,8 @@ public class DateButtonEvent extends AddInt implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		Logs.setLog("Open datePicker");
 		dateArea.setText(new DataPicker(f).setPickedDate());
 		
 	}

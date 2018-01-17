@@ -5,6 +5,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 
+import app.Logs;
 import app.Interface.HomeInt;
 import app.Interface.Intf;
 import app.Interface.ManageIntf;
@@ -17,6 +18,9 @@ public class BackButtonEvent extends ManageIntf implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
+		
+		Logs.setLog("Enter to home menu");
+		
 		Intf intf = new HomeInt(frame);
 		intf.setInterface();
 		

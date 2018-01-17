@@ -5,6 +5,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+/**
+ * 
+ * Clasa care creeaza componente necesare pentru interfata
+ * 
+ * @author Kocsis Lorand
+ *
+ */
 public class ComponentConstructor {
 
 	public static JButton makeButton(String title, int x, int y) {

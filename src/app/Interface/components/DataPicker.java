@@ -13,6 +13,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Clasa care genereaza DatePickeru
+ * 
+ * @author Kocsis Lorand
+ *
+ */
 public class DataPicker {
 	int month = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
 	int year = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);;

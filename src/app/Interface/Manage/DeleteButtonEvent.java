@@ -10,6 +10,16 @@ import app.Interface.Intf;
 import app.Interface.ManageIntf;
 import app.databases.SQLiteConnection;
 
+
+/**
+ * 
+ * Clasa care seteaza ActionListeneru pentru butonul de delete care sterge date din baza de date
+ * Mostene clasa ManageIntf
+ * 
+ * @author Kocsis Lorand
+ *
+ */
+
 public class DeleteButtonEvent extends ManageIntf implements ActionListener {
 
 	final private JTextField searchArea;

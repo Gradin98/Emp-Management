@@ -11,6 +11,15 @@ import app.Emp;
 import app.Interface.ManageIntf;
 import app.databases.SQLiteConnection;
 
+/**
+ * 
+ * Clasa care seteaza ActionListeneru pentru butonul de search, daca gaseste se afieaza meniul de manage
+ * Mostene clasa ManageIntf
+ * 
+ * @author Kocsis Lorand
+ *
+ */
+
 public class SearchButtonEvent extends ManageIntf implements ActionListener {
 
 	final private JTextField nameArea;

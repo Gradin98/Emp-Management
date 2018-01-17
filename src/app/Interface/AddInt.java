@@ -10,6 +10,13 @@ import app.Interface.Add.SubmitButtonEvent;
 import app.Interface.Manage.DateButtonEvent;
 import app.Interface.components.ComponentConstructor;
 
+/**
+ * 
+ * Clasa care creeaza interfata pentru meniul de adaugare de date
+ * 
+ * @author Kocsis Lorand
+ *
+ */
 public class AddInt extends Intf {
 
 	final protected JLabel name = ComponentConstructor.makeLabel("Name:", 50, 50);
@@ -35,7 +42,7 @@ public class AddInt extends Intf {
 	final protected JTextField dateArea = ComponentConstructor.makeTextArea(450, 80);
 	final protected JButton dateButton = ComponentConstructor.makeSmallButton("Picker", 600, 80);
 
-	final protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\back.png",
+	final protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\back.png",
 			680, -20);
 
 	final protected JButton submit = ComponentConstructor.makeButton("Submit", 550, 300);
@@ -45,6 +52,9 @@ public class AddInt extends Intf {
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void setInterface() {
 
 		clearFrame();

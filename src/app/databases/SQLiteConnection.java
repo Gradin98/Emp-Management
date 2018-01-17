@@ -8,21 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import app.Emp;
+import app.Logs;
 
 /**
  * Clasa care permite conectarea cu Baze de date de tip SQLite
- * 
- * <ol>
- * Contine functiile:
- * <li>{@link #checkConnection()}</li>
- * <li>{@link #connect()}</li>
- * <li>{@link #openConnection()}</li>
- * <li>{@link #createDatabase()}</li>
- * <li>{@link #setContent(String, String)}</li>
- * <li>{@link #contentList(String)}</li>
- * <li>{@link #contentByDate(String, String, String)}</li>
- * <li>{@link #numeClasa()}</li>
- * </ol>
  * 
  * @author Kocsis Lorand
  *
@@ -38,6 +27,9 @@ public class SQLiteConnection {
 	 */
 	public void connect() {
 		try {
+
+			Logs.setLog("Try to connect to database");
+
 			c = DriverManager.getConnection("jdbc:sqlite:" + System.getenv("APPDATA") + "\\ProiectP3\\database.db");
 			stmt = c.createStatement();
 		} catch (SQLException e) {
@@ -46,9 +38,15 @@ public class SQLiteConnection {
 		}
 	}
 
+	/**
+	 * Functie care creeaza baza de date in caz ca nu exista
+	 */
 	public void createDatabase() {
 		connect();
 		try {
+
+			Logs.setLog("Check if database is created");
+
 			Class.forName("org.sqlite.JDBC");
 
 			String sql = "CREATE TABLE IF NOT EXISTS `Emp` (\r\n" + "	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,\r\n"
@@ -64,9 +62,22 @@ public class SQLiteConnection {
 
 	}
 
+	/**
+	 * Functie care actualizeaza datele in baza de date in functie de id
+	 * 
+	 * @param id
+	 * @param name
+	 * @param firstname
+	 * @param salary
+	 * @param post
+	 * @param team
+	 * @param project
+	 * @param birthdate
+	 */
 	public void updateContent(String id, String name, String firstname, String salary, String post, String team,
 			String project, String birthdate) {
 		connect();
+		Logs.setLog("Try to update data in database");
 		try {
 			if (checkData(id) && checkData(name) && checkData(firstname) && checkData(salary) && checkData(post)
 					&& checkData(team) && checkData(project) && checkData(birthdate)) {
@@ -76,6 +87,7 @@ public class SQLiteConnection {
 
 				stmt.executeUpdate(sql);
 				stmt.close();
+				Logs.setLog("Data update succesfull");
 			}
 
 		} catch (SQLException e) {
@@ -85,9 +97,22 @@ public class SQLiteConnection {
 
 	}
 
+	/**
+	 * 
+	 * Functie care insereaza date in baza de date
+	 * 
+	 * @param name
+	 * @param firstname
+	 * @param salary
+	 * @param post
+	 * @param team
+	 * @param project
+	 * @param birthdate
+	 */
 	public void setContent(String name, String firstname, String salary, String post, String team, String project,
 			String birthdate) {
 		connect();
+		Logs.setLog("Try to insert data in database");
 		try {
 
 			if (checkData(name) && checkData(firstname) && checkData(salary) && checkData(post) && checkData(team)
@@ -98,6 +123,7 @@ public class SQLiteConnection {
 
 				stmt.executeUpdate(sql);
 				stmt.close();
+				Logs.setLog("Data inserted succesfull");
 			}
 
 		} catch (SQLException e) {
@@ -107,9 +133,16 @@ public class SQLiteConnection {
 
 	}
 
+	/**
+	 * 
+	 * Functie care sterge date din baza de date in functie de id
+	 * 
+	 * @param id
+	 */
 	public void deleteEmp(String id) {
 
 		connect();
+		Logs.setLog("Try to delete row in database");
 		try {
 
 			if (!checkData(id))
@@ -120,16 +153,26 @@ public class SQLiteConnection {
 			stmt.executeUpdate(sql);
 			stmt.close();
 
+			Logs.setLog("Data deleted succesfull");
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * Functie care obtine date din baza de date in functie de id
+	 * 
+	 * @param id
+	 * @return un obiect de tip EMP in caz de gaseste, null in caz contrar
+	 */
+
 	public Emp getEmpByID(String id) {
 
 		connect();
 
+		Logs.setLog("Try to get row by ID");
 		try {
 			if (!checkData(id))
 				return null;
@@ -141,6 +184,8 @@ public class SQLiteConnection {
 						result.getString("salary"), result.getString("post"), result.getString("team"),
 						result.getString("project"), result.getString("birthdate"));
 				stmt.close();
+
+				Logs.setLog("Data finded succesfully");
 				return emp;
 
 			}
@@ -154,8 +199,16 @@ public class SQLiteConnection {
 
 	}
 
+	/**
+	 * Functie care obtine toate datele din bazele de date
+	 * 
+	 * @return un tablou bidimensional, null in caz contrars
+	 */
 	public Object[][] getContentDb() {
 		connect();
+
+		Logs.setLog("Try to get all rows from database");
+
 		try {
 
 			ResultSet result = stmt.executeQuery("SELECT * FROM Emp;");
@@ -191,6 +244,8 @@ public class SQLiteConnection {
 			}
 			stmt.close();
 
+			Logs.setLog("Data returned succesfully");
+
 			return data;
 
 		} catch (SQLException e) {
@@ -200,6 +255,13 @@ public class SQLiteConnection {
 		return null;
 	}
 
+	/**
+	 * 
+	 * Verifica datele daca sunt diferite de ""
+	 * 
+	 * @param text
+	 * @return true in caz ca sunt valide, false in caz contrar
+	 */
 	private boolean checkData(String text) {
 		if (!text.equals("")) {
 			return true;

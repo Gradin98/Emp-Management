@@ -9,6 +9,14 @@ import app.Interface.Home.ManageButtonEvent;
 import app.Interface.Home.ShowButtonEvent;
 import app.Interface.components.ComponentConstructor;
 
+/**
+ * 
+ * Clasa care creeaza interfata pentru meniul de home
+ * 
+ * @author Kocsis Lorand
+ *
+ */
+
 public class HomeInt extends Intf {
 
 	final protected JButton add = ComponentConstructor.makeButton("New Employee", 50, 100);
@@ -17,12 +25,12 @@ public class HomeInt extends Intf {
 
 	final protected JButton show = ComponentConstructor.makeButton("Show Employee", 550, 100);
 
-	final protected JLabel addImg = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\add.png",
+	final protected JLabel addImg = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\add.png",
 			95, 20);
 	final protected JLabel manageImg = ComponentConstructor
-			.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\manage.png", 350, 20);
+			.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\manage.png", 350, 20);
 	final protected JLabel showImg = ComponentConstructor
-			.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\show.png", 600, 20);
+			.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\show.png", 600, 20);
 
 	final protected Object[] columns = { "id", "name", "firstname", "salary", "post", "team", "project", "birthdate" };
 
@@ -31,6 +39,9 @@ public class HomeInt extends Intf {
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void setInterface() {
 
 		clearFrame();

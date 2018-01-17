@@ -10,6 +10,15 @@ import app.Interface.AddInt;
 import app.Interface.Intf;
 import app.databases.SQLiteConnection;
 
+/**
+ * 
+ * Clasa care seteaza Action Listeneru pentru butonul de submit din clasa AddInt
+ * Mostene clasa AddInt
+ * 
+ * @author Kocsis Lorand
+ *
+ */
+
 public class SubmitButtonEvent extends AddInt implements ActionListener {
 
 	final private JTextField nameArea;

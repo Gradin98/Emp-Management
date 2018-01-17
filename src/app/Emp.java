@@ -1,5 +1,11 @@
 package app;
 
+/**
+ * Clasa care salveaza toate datele din bazele de date intr-un obiect
+ * 
+ * @author Kocsis Lorand
+ *
+ */
 public class Emp {
 	
 	final private String id;

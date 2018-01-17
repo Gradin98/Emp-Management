@@ -12,6 +12,15 @@ import app.Interface.Manage.SearchButtonEvent;
 import app.Interface.Manage.SubmitButtonEvent;
 import app.Interface.components.ComponentConstructor;
 
+/**
+ * 
+ * Clasa care creeaza interfata pentru meniul de adaugare de date.
+ * Mostene clasa Intf
+ * 
+ * @author Kocsis Lorand
+ *
+ */
+
 public class ManageIntf extends Intf {
 
 	final protected JLabel name = ComponentConstructor.makeLabel("Name:", 50, 50);
@@ -32,7 +41,7 @@ public class ManageIntf extends Intf {
 	final protected JButton dateButton = ComponentConstructor.makeSmallButton("Picker", 600, 80);
 	final protected JButton submit = ComponentConstructor.makeButton("Update", 550, 300);
 	final protected JButton delete = ComponentConstructor.makeButton("Delete", 350, 300);
-	final protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\back.png",
+	final protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\back.png",
 			680, -20);
 	final protected JLabel search = ComponentConstructor.makeLabel("Search:", 50, -20);
 	final protected JTextField searchArea = ComponentConstructor.makeTextArea(50, 10);

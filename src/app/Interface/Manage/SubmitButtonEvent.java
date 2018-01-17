@@ -10,6 +10,16 @@ import app.Interface.Intf;
 import app.Interface.ManageIntf;
 import app.databases.SQLiteConnection;
 
+
+/**
+ * 
+ * Clasa care seteaza ActionListeneru pentru butonul de submit necesar pentru actualizarea datelor
+ * Mostene clasa ManageIntf
+ * 
+ * @author Kocsis Lorand
+ *
+ */
+
 public class SubmitButtonEvent extends ManageIntf implements ActionListener {
 
 	final private JTextField nameArea;
