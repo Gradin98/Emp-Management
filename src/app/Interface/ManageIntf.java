@@ -41,7 +41,8 @@ public class ManageIntf extends Intf {
 	final protected JButton dateButton = ComponentConstructor.makeSmallButton("Picker", 600, 80);
 	final protected JButton submit = ComponentConstructor.makeButton("Update", 550, 300);
 	final protected JButton delete = ComponentConstructor.makeButton("Delete", 350, 300);
-	final protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\back.png",
+	final protected JLabel back = ComponentConstructor.makeImgLabel(this.getClass().getResource(
+"/images/back.png"),
 			680, -20);
 	final protected JLabel search = ComponentConstructor.makeLabel("Search:", 50, -20);
 	final protected JTextField searchArea = ComponentConstructor.makeTextArea(50, 10);
@@ -55,6 +56,8 @@ public class ManageIntf extends Intf {
 	public void setInterface() {
 
 		clearFrame();
+		
+		dateArea.setEditable(false);
 
 		name.setVisible(false);
 		nameArea.setVisible(false);

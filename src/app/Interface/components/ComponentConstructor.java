@@ -1,5 +1,7 @@
 package app.Interface.components;
 
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -28,11 +30,11 @@ public class ComponentConstructor {
 		return button;
 	}
 	
-	public static JLabel makeImgLabel(String path, int x, int y){
+	public static JLabel makeImgLabel(URL url, int x, int y){
 		JLabel label = new JLabel();
 		label.setBounds(x,y,100,100);
 		
-		ImageIcon iconLogo = new ImageIcon(path);
+		ImageIcon iconLogo = new ImageIcon(url);
 		label.setIcon(iconLogo);
 		return label;
 	}

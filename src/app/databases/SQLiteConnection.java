@@ -30,7 +30,7 @@ public class SQLiteConnection {
 
 			Logs.setLog("Try to connect to database");
 
-			c = DriverManager.getConnection("jdbc:sqlite:" + System.getenv("APPDATA") + "\\ProiectP3\\database.db");
+			c = DriverManager.getConnection("jdbc:sqlite:database.db");
 			stmt = c.createStatement();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

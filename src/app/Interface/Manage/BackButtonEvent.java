@@ -10,6 +10,16 @@ import app.Interface.HomeInt;
 import app.Interface.Intf;
 import app.Interface.ManageIntf;
 
+
+/**
+ * 
+ * Clasa care seteaza ActionListeneru pentru butonul de back necesar pentru revenirea la meniul de home
+ * Mostene clasa ManageIntf
+ * 
+ * @author Kocsis Lorand
+ *
+ */
+
 public class BackButtonEvent extends ManageIntf implements MouseListener {
 
 	public BackButtonEvent(JFrame frame) {

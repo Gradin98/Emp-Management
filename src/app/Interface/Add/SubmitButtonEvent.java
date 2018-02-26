@@ -1,8 +1,10 @@
 package app.Interface.Add;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -43,6 +45,32 @@ public class SubmitButtonEvent extends AddInt implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		if(!checkNumber(salarArea.getText())) {
+			salarArea.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+			return;
+		}
+		
+		if(!checkAlphabet(nameArea.getText())) {
+			nameArea.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+			return;
+		}
+		
+		if(!checkAlphabet(firstNameArea.getText())) {
+			firstNameArea.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+			return;
+		}
+		
+		if(!checkAlphabet(postArea.getText())) {
+			postArea.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+			return;
+		}
+		
+		if(!checkAlphabet(teamArea.getText())) {
+			teamArea.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+			return;
+		}
+		
 		SQLiteConnection con = new SQLiteConnection();
 		con.setContent(nameArea.getText(), firstNameArea.getText(), salarArea.getText(), postArea.getText(),
 				teamArea.getText(), projectArea.getText(), dateArea.getText());
@@ -50,5 +78,20 @@ public class SubmitButtonEvent extends AddInt implements ActionListener {
 		intf.setInterface();
 
 	}
+	
+	public boolean checkNumber(String text) {
+		if(text.matches("^[0-9]*$")) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean checkAlphabet(String text) {
+		if(text.matches("^[ A-Za-z]+$")) {
+			return true;
+		}
+		return false;
+	}
+	
 
 }

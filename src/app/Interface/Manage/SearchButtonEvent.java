@@ -1,9 +1,11 @@
 package app.Interface.Manage;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -49,7 +51,15 @@ public class SearchButtonEvent extends ManageIntf implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SQLiteConnection con = new SQLiteConnection();
 
+		if(!checkNumber(searchArea.getText())) {
+			searchArea.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+			return;
+		}
+		
 		if (searchArea.getText() != "") {
+			
+			searchArea.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+			
 			Emp emp = con.getEmpByID(searchArea.getText());
 
 			if (emp != null) {
@@ -71,6 +81,13 @@ public class SearchButtonEvent extends ManageIntf implements ActionListener {
 
 		}
 		
+	}
+	
+	public boolean checkNumber(String text) {
+		if(text.matches("^[0-9]*$")) {
+			return true;
+		}
+		return false;
 	}
 
 }

@@ -12,7 +12,8 @@ import app.Interface.components.ComponentConstructor;
 
 /**
  * 
- * Clasa care creeaza interfata pentru meniul de adaugare de date
+ * Clasa care creeaza interfata pentru meniul de adaugare de date. Mostene clasa
+ * Intf
  * 
  * @author Kocsis Lorand
  *
@@ -42,8 +43,7 @@ public class AddInt extends Intf {
 	final protected JTextField dateArea = ComponentConstructor.makeTextArea(450, 80);
 	final protected JButton dateButton = ComponentConstructor.makeSmallButton("Picker", 600, 80);
 
-	final protected JLabel back = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\back.png",
-			680, -20);
+	final protected JLabel back = ComponentConstructor.makeImgLabel(this.getClass().getResource("/images/back.png"), 680, -20);
 
 	final protected JButton submit = ComponentConstructor.makeButton("Submit", 550, 300);
 
@@ -58,6 +58,8 @@ public class AddInt extends Intf {
 	public void setInterface() {
 
 		clearFrame();
+
+		dateArea.setEditable(false);
 
 		dateButton.addActionListener(new DateButtonEvent(f, dateArea));
 		back.addMouseListener(new BackButtonEvent(frame));

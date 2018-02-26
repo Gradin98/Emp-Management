@@ -1,0 +1,73 @@
+2018-01-17 20:18:50.993 : Start app
+2018-01-17 20:18:51.3 : Try to connect to database
+2018-01-17 20:18:53.288 : Check if database is created
+2018-01-17 20:18:55.533 : Set table with all datas from database
+2018-01-17 20:18:55.552 : Try to connect to database
+2018-01-17 20:18:55.562 : Try to get all rows from database
+2018-01-17 20:18:55.602 : Data returned succesfully
+2018-01-17 20:22:32.722 : Start app
+2018-01-17 20:22:33.05 : Try to connect to database
+2018-01-17 20:22:33.689 : Check if database is created
+2018-01-17 20:26:09.253 : Start app
+2018-01-17 20:26:09.51 : Try to connect to database
+2018-01-17 20:26:10.112 : Check if database is created
+2018-01-17 20:26:21.057 : Start app
+2018-01-17 20:26:21.313 : Try to connect to database
+2018-01-17 20:26:21.808 : Check if database is created
+2018-01-17 20:26:41.234 : Start app
+2018-01-17 20:26:41.548 : Try to connect to database
+2018-01-17 20:26:42.06 : Check if database is created
+2018-01-17 20:26:46.383 : Enter to manage menu
+2018-01-17 20:27:09.85 : Start app
+2018-01-17 20:27:10.103 : Try to connect to database
+2018-01-17 20:27:10.615 : Check if database is created
+2018-01-17 20:27:11.754 : Enter to add menu
+2018-01-17 20:27:12.954 : Enter to home menu
+2018-01-17 20:44:54.61 : Start app
+2018-01-17 20:44:55.018 : Try to connect to database
+2018-01-17 20:44:55.877 : Check if database is created
+2018-01-17 20:45:15.872 : Start app
+2018-01-17 20:45:16.223 : Try to connect to database
+2018-01-17 20:45:16.842 : Check if database is created
+2018-01-17 20:46:15.895 : Start app
+2018-01-17 20:46:16.227 : Try to connect to database
+2018-01-17 20:46:16.764 : Check if database is created
+2018-01-17 20:46:37.251 : Start app
+2018-01-17 20:46:37.538 : Try to connect to database
+2018-01-17 20:46:38.057 : Check if database is created
+2018-01-17 20:46:51.43 : Start app
+2018-01-17 20:46:51.704 : Try to connect to database
+2018-01-17 20:46:52.253 : Check if database is created
+2018-01-17 20:48:23.814 : Start app
+2018-01-17 20:48:24.123 : Try to connect to database
+2018-01-17 20:48:24.659 : Check if database is created
+2018-01-17 20:48:49.151 : Start app
+2018-01-17 20:48:49.415 : Try to connect to database
+2018-01-17 20:48:50.031 : Check if database is created
+2018-01-17 20:48:51.451 : Enter to manage menu
+2018-01-17 20:48:52.446 : Enter to home menu
+2018-01-17 20:48:53.05 : Set table with all datas from database
+2018-01-17 20:48:53.056 : Try to connect to database
+2018-01-17 20:48:53.064 : Try to get all rows from database
+2018-01-17 20:48:53.104 : Data returned succesfully
+2018-01-17 20:48:54.359 : Enter to add menu
+2018-01-17 20:48:55.52 : Enter to home menu
+2018-01-17 20:53:11.309 : Start app
+2018-01-17 20:53:11.563 : Try to connect to database
+2018-01-17 20:53:12.147 : Check if database is created
+2018-01-19 09:24:38.533 : Start app
+2018-01-19 09:24:39.223 : Try to connect to database
+2018-01-19 09:24:39.907 : Check if database is created
+2018-01-19 09:24:49.58 : Enter to add menu
+2018-01-19 09:24:50.814 : Enter to home menu
+2018-01-19 09:24:51.798 : Enter to manage menu
+2018-01-19 09:24:52.938 : Enter to home menu
+2018-01-19 09:24:53.683 : Enter to manage menu
+2018-01-19 09:24:56.96 : Try to connect to database
+2018-01-19 09:24:56.97 : Try to get row by ID
+2018-01-19 09:24:57.045 : Data finded succesfully
+2018-01-19 09:24:59.034 : Enter to home menu
+2018-01-19 09:25:00.172 : Set table with all datas from database
+2018-01-19 09:25:00.178 : Try to connect to database
+2018-01-19 09:25:00.185 : Try to get all rows from database
+2018-01-19 09:25:00.192 : Data returned succesfully

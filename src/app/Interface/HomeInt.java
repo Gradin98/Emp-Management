@@ -11,7 +11,8 @@ import app.Interface.components.ComponentConstructor;
 
 /**
  * 
- * Clasa care creeaza interfata pentru meniul de home
+ * Clasa care creeaza interfata pentru meniul de home.
+ * Mostene clasa Intf
  * 
  * @author Kocsis Lorand
  *
@@ -25,12 +26,12 @@ public class HomeInt extends Intf {
 
 	final protected JButton show = ComponentConstructor.makeButton("Show Employee", 550, 100);
 
-	final protected JLabel addImg = ComponentConstructor.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\add.png",
+	final protected JLabel addImg = ComponentConstructor.makeImgLabel(this.getClass().getResource("/images/add.png"),
 			95, 20);
 	final protected JLabel manageImg = ComponentConstructor
-			.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\manage.png", 350, 20);
+			.makeImgLabel(this.getClass().getResource("/images/manage.png"), 350, 20);
 	final protected JLabel showImg = ComponentConstructor
-			.makeImgLabel(System.getenv("APPDATA") + "\\ProiectP3\\images\\show.png", 600, 20);
+			.makeImgLabel(this.getClass().getResource("/images/show.png"), 600, 20);
 
 	final protected Object[] columns = { "id", "name", "firstname", "salary", "post", "team", "project", "birthdate" };
 

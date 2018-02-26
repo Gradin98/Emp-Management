@@ -18,7 +18,7 @@ public class Logs {
 
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-		try (FileWriter fw = new FileWriter(System.getenv("APPDATA") + "\\ProiectP3\\logs.txt", true);
+		try (FileWriter fw = new FileWriter("logs.txt", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw)) {
 			out.println(timestamp + " : " + message);
